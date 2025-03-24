@@ -11,6 +11,59 @@
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <script type="text/javascript">
     document.documentElement.className = 'js';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainContainer = document.getElementById('main-media-container');
+      const mainVideo = document.getElementById('main-video');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Remove active class from all items
+          galleryItems.forEach(i => i.classList.remove('active'));
+          
+          // Add active class to clicked item
+          this.classList.add('active');
+          
+          const mediaType = this.getAttribute('data-type');
+          const mediaSrc = this.getAttribute('data-src');
+          
+          // Clear the container
+          mainContainer.innerHTML = '';
+          
+          if (mediaType === 'video') {
+            // Create video element
+            const video = document.createElement('video');
+            video.controls = true;
+            video.id = 'main-video';
+            video.style.width = '100%';
+            video.style.maxWidth = '1280px';
+            video.style.border = '4px solid #CA6223';
+            video.style.borderRadius = '8px';
+            video.style.boxShadow = '0 0 15px rgba(202, 98, 35, 0.5)';
+            
+            const source = document.createElement('source');
+            source.src = mediaSrc;
+            source.type = 'video/mp4';
+            
+            video.appendChild(source);
+            mainContainer.appendChild(video);
+          } else if (mediaType === 'image') {
+            // Create image element
+            const img = document.createElement('img');
+            img.src = mediaSrc;
+            img.alt = 'Game Screenshot';
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '720px';
+            img.style.border = '4px solid #CA6223';
+            img.style.borderRadius = '8px';
+            img.style.boxShadow = '0 0 15px rgba(202, 98, 35, 0.5)';
+            
+            mainContainer.appendChild(img);
+          }
+        });
+      });
+    });
   </script>
 </head>
 
@@ -19,25 +72,55 @@
     <div class="center">
       <div class="logo-container">
         <span class="game-title">Blue</span>
-        <img src="/images/GameIcon.png" class="flash" id="logo" alt="BlueSiege Logo">
+        <img src="/images/logo.png" class="flash" id="logo" alt="ZerothComplex Logo">
         <span class="game-title">Siege</span>
       </div>
       
-      <div class="video-container">
-        <video controls>
+      <div class="video-container" id="main-media-container">
+        <video controls id="main-video">
           <source src="videos/BlueSiege.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
       
-      <div class="socialIconGroup">
-        <ul>
-          <!-- Social media icons can be uncommented and used when needed -->
-          <!-- <li><a href="http://www.twitter.com/zerothcomplex" target="_blank"><img class="flash" id="twitterLogo" src="/images/twitter.png" alt="Twitter"></a></li> -->
-          <!-- <li><a href="http://zerothcomplex.itch.io/" target="_blank"><img id="itchLogo" class="flash" src="/images/itch.png" alt="Itch.io"></a></li> -->
-          <!-- <li><a href="mailto:dev@zerothcomplex.com" target="_blank"><img id="emailLogo" class="flash" src="/images/mail.png" alt="Email"></a></li> -->
-        </ul>
+      <div class="gallery-container">
+        <div class="gallery-scroll">
+          <div class="gallery-item active" data-type="video" data-src="videos/BlueSiege.mp4">
+            <img src="/images/Screentshots/Screenshot-start.png" alt="Game Trailer">
+            <div class="play-icon"></div>
+          </div>
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screentshot-basic.png">
+            <img src="/images/Screentshots/Screentshot-basic.png" alt="Screenshot 1">
+          </div>
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-another.png">
+            <img src="/images/Screentshots/Screenshot-another.png" alt="Screenshot 2">
+          </div>
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-many.png">
+            <img src="/images/Screentshots/Screenshot-many.png" alt="Gameplay Video">
+          </div>
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-settings.png">
+            <img src="/images/Screentshots/Screenshot-settings.png" alt="Screenshot 3">
+          </div>
+         <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-skills.png">
+           <img src="/images/Screentshots/Screenshot-skills.png" alt="Screenshot 3">
+         </div>
+        </div>
       </div>
+   </div>
+
+      <div class="game-description">
+        <p><strong>Blue Siege</strong> is an idle tower defense game where you defend the structure against waves of aquatic invaders. Your automated defense system employs a variety of turrets with piercing bullets, laser beams, and explosive projectiles to fend off the enemy. Between waves, select powerful upgrades like multi-barrel weapons, energy shields, and emergency pulse attacks that clear the battlefield, then watch as your defenses handle increasingly challenging swarms.</p>
+        
+        <div class="tech-info">Built using Unity and DOTS</div>
+        
+        <div class="coming-soon">Coming Soon</div>
+      </div>
+      
+      <footer>
+        <a href="mailto:dev@zerothcomplex.com">
+          <img src="/images/mail.png" alt="Contact Us" class="mail-icon">
+        </a>
+      </footer>
     </div>
   </div>
 </body>
