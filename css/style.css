@@ -182,7 +182,7 @@ video {
   text-align: center;
   font-style: italic;
 }
-
+/* 
 .coming-soon {
   margin: 25px auto;
   max-width: 1280px;
@@ -193,6 +193,30 @@ video {
   text-align: center;
   /* text-shadow: -2px 2px 1px #CA6223; */
   /* -webkit-text-stroke: 1px #CA6223; */
+} */
+
+.release-wrapper {
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* horizontal centering on the page */
+  max-width: 1280px;
+}
+
+.coming-soon {
+  /* remove width:100% so it only takes as much space as the text needs */
+  width: auto;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  /* you can keep any text‐shadow or stroke here if desired */
+  text-shadow: -2px 2px 1px #3a3a3a;
+  /* -webkit-text-stroke: 1px #CA6223; */
+}
+
+.steam-icon {
+  width: 32px;   /* pick a size that matches your design */
+  height: auto;
+  display: inline-block;
 }
 
 footer {
