@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="images/logo.png">
-  <title>ZerothComplex</title>
+  <link rel="icon" href="images/GameIcon.png">
+  <title>IdleCore</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <script type="text/javascript">
     document.documentElement.className = 'js';
-    
-    document.addEventListener('DOMContentLoaded', function() {
+
+    document.addEventListener('DOMContentLoaded', function () {
       const mainContainer = document.getElementById('main-media-container');
       const mainVideo = document.getElementById('main-video');
       const galleryItems = document.querySelectorAll('.gallery-item');
-      
+
       galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
           // Remove active class from all items
           galleryItems.forEach(i => i.classList.remove('active'));
-          
+
           // Add active class to clicked item
           this.classList.add('active');
-          
+
           const mediaType = this.getAttribute('data-type');
           const mediaSrc = this.getAttribute('data-src');
-          
+
           // Clear the container
           mainContainer.innerHTML = '';
-          
+
           if (mediaType === 'video') {
             // Create video element
             const video = document.createElement('video');
@@ -38,14 +40,14 @@
             video.id = 'main-video';
             video.style.width = '100%';
             video.style.maxWidth = '1280px';
-            video.style.border = '4px solid #CA6223';
+            // video.style.border = '4px solid #CA6223';
             video.style.borderRadius = '8px';
-            video.style.boxShadow = '0 0 15px rgba(202, 98, 35, 0.5)';
-            
+            // video.style.boxShadow = '0 0 15px rgba(202, 98, 35, 0.5)';
+
             const source = document.createElement('source');
             source.src = mediaSrc;
             source.type = 'video/mp4';
-            
+
             video.appendChild(source);
             mainContainer.appendChild(video);
           } else if (mediaType === 'image') {
@@ -55,10 +57,10 @@
             img.alt = 'Game Screenshot';
             img.style.maxWidth = '100%';
             img.style.maxHeight = '720px';
-            img.style.border = '4px solid #CA6223';
+            // img.style.border = '4px solid #CA6223';
             img.style.borderRadius = '8px';
-            img.style.boxShadow = '0 0 15px rgba(202, 98, 35, 0.5)';
-            
+            // img.style.boxShadow = '0 0 15px rgba(202, 98, 35, 0.5)';
+
             mainContainer.appendChild(img);
           }
         });
@@ -71,57 +73,97 @@
   <div class="container">
     <div class="center">
       <div class="logo-container">
-        <span class="game-title">Blue</span>
-        <img src="/images/logo.png" class="flash" id="logo" alt="ZerothComplex Logo">
-        <span class="game-title">Siege</span>
+        <span class="game-title">IdleCore</span>
+        <!-- <img src="/images/logo.png" class="flash" id="logo" alt="ZerothComplex Logo"> -->
+        <!-- <span class="game-title">Siege</span> -->
       </div>
-      
+
       <div class="video-container" id="main-media-container">
         <video controls id="main-video">
-          <source src="videos/BlueSiege2.webm" type="video/webm">
+          <source src="videos/IdleCoreTrailer.webm" type="video/webm">
           Your browser does not support the video tag.
         </video>
       </div>
-      
+
       <div class="gallery-container">
         <div class="gallery-scroll">
-          <div class="gallery-item active" data-type="video" data-src="videos/BlueSiege2.webm">
-            <img src="/images/Screentshots/Screenshot-start.png" alt="Game Trailer">
+          <div class="gallery-item active" data-type="video" data-src="videos/IdleCoreTrailer.webm">
+            <img src="/images/Screentshots/Screentshot0.png" alt="Game Trailer">
             <div class="play-icon"></div>
           </div>
-          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screentshot-basic.png">
-            <img src="/images/Screentshots/Screentshot-basic.png" alt="Screenshot 1">
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot1.png">
+            <img src="/images/Screentshots/Screenshot1.png" alt="Screenshot 1">
           </div>
-          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-another.png">
-            <img src="/images/Screentshots/Screenshot-another.png" alt="Screenshot 2">
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot4.png">
+            <img src="/images/Screentshots/Screenshot4.png" alt="Screenshot 4">
           </div>
-          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-many.png">
-            <img src="/images/Screentshots/Screenshot-many.png" alt="Gameplay Video">
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot5.png">
+            <img src="/images/Screentshots/Screenshot5.png" alt="Screenshot 5">
           </div>
-          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-settings.png">
-            <img src="/images/Screentshots/Screenshot-settings.png" alt="Screenshot 3">
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot2.png">
+            <img src="/images/Screentshots/Screenshot2.png" alt="Screenshot 2">
           </div>
-         <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot-skills.png">
-           <img src="/images/Screentshots/Screenshot-skills.png" alt="Screenshot 3">
-         </div>
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot3.png">
+            <img src="/images/Screentshots/Screenshot3.png" alt="Screenshot 3">
+          </div>
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot6.png">
+            <img src="/images/Screentshots/Screenshot6.png" alt="Screenshot 6">
+          </div>
+          <div class="gallery-item" data-type="image" data-src="/images/Screentshots/Screenshot7.png">
+            <img src="/images/Screentshots/Screenshot7.png" alt="Screenshot 7">
+          </div>
         </div>
       </div>
-   </div>
-
-      <div class="game-description">
-        <p><strong>Blue Siege</strong> is an idle tower defense game where you defend the structure against waves of aquatic invaders. Your automated defense system employs a variety of turrets with piercing bullets, laser beams, and explosive projectiles to fend off the enemy. Between waves, select powerful upgrades like multi-barrel weapons, energy shields, and emergency pulse attacks that clear the battlefield, then watch as your defenses handle increasingly challenging swarms.</p>
-        
-        <div class="tech-info">Built using Unity and DOTS</div>
-        
-        <div class="coming-soon">Coming Soon</div>
-      </div>
-      
-      <footer>
-        <a href="mailto:dev@zerothcomplex.com">
-          <img src="/images/mail.png" alt="Contact Us" class="mail-icon">
-        </a>
-      </footer>
     </div>
+
+    <div class="game-description">
+      <h2>Summary</h2>
+      <p>IdleCore is a true idle base defence game. Defend the base against relentless waves of hostile
+        aquatic creatures. Defeat each wave to earn currency, then invest them in powerful upgrades - add turrets,
+        shield, and more, to strengthen your defenses and stay one step ahead of the aquatic threats. Defend the base on
+        different types of planets. By defending successfully earn new skins of base and new style of turrets.
+      </p>
+      <br>
+      <h2>Features</h2>
+      <ul>
+        <li>
+          <strong>Effortless Idle Combat:</strong> Automated turrets lock on and engage enemies, to enjoy the action
+          hands free.
+        </li>
+        <li>
+          <strong>Smooth Experience:</strong> Dive into smooth gameplay backed by a clean, immersive UI and captivating
+          visual design.
+        </li>
+        <li>
+          <strong>Explosive VFX:</strong> Feast your eyes on spectacular particle bursts that bring every turret blast
+          and creature takedown to life.
+        </li>
+        <li>
+          <strong>Deep Upgrade System:</strong> Enhance the defenses with tiered improvements from reinforced armor to
+          chain lightning, that scale with every victory.
+        </li>
+        <li>
+          <strong>Procedurally Unlocked Skill Trees:</strong> Discover randomized upgrade paths each run, ensuring fresh
+          strategies and surprises every time you play.
+        </li>
+        <li>
+          <strong>Custom Mode:</strong> Play a custom wave by choosing upgrades and specifying the number of each enemy
+          type.
+        </li>
+      </ul>
+
+      <!-- <div class="tech-info">Built using Unity and DOTS</div> -->
+
+      <!-- <div class="coming-soon">Release Date: TBA</div> -->
+    </div>
+
+    <footer>
+      <a href="mailto:dev@zerothcomplex.com">
+        <img src="/images/mail.png" alt="Contact Us" class="mail-icon">
+      </a>
+    </footer>
+  </div>
   </div>
 </body>
+
 </html>
