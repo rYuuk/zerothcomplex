@@ -182,24 +182,13 @@ video {
   text-align: center;
   font-style: italic;
 }
-/* 
-.coming-soon {
-  margin: 25px auto;
-  max-width: 1280px;
-  width: 100%;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  text-align: center;
-  /* text-shadow: -2px 2px 1px #CA6223; */
-  /* -webkit-text-stroke: 1px #CA6223; */
-} */
 
 .release-wrapper {
-  display: flex;
+  /* display: flex; */
   align-items: center;      /* vertical centering */
   justify-content: center;  /* horizontal centering on the page */
   max-width: 1280px;
+  white-space: 2;
 }
 
 .coming-soon {
@@ -214,7 +203,7 @@ video {
 }
 
 .steam-icon {
-  width: 32px;   /* pick a size that matches your design */
+  width: 120px;   /* pick a size that matches your design */
   height: auto;
   display: inline-block;
 }
